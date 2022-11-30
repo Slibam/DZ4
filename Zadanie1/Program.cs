@@ -12,10 +12,12 @@ void Zadanie1()
 void PoiscChet(int[] numbers)//Поиск чётных чисел в массиве
 {   
     int Count = 0;
+    Console.Write("Чётные числа: ");
     for (int i = 0; i < numbers.Length; i++)
     {
         if (numbers[i] % 2 == 0) 
         {
+            
             Console.Write ($"{numbers[i]} ");
             Count++;
         }
