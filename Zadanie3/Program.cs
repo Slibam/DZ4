@@ -2,14 +2,14 @@
 {
     //Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов с нечётными индексами.
     int size = 10;
-    int[] numbers = new int[size];
-    FillArray(numbers, -20, 20);
+    double[] numbers = new double[size];
+    FillArray(numbers);
     PrintArray(numbers);
     SumElemNe4Index(numbers);
 }
-void SumElemNe4Index(int[] numbers)//Поиск суммы элементов с нечётными индексами
+void SumElemNe4Index(double[] numbers)//Поиск суммы элементов с нечётными индексами
 {
-    int index = 0;
+    double index = 0;
     for (int i = 0; i < numbers.Length; i++)
     {
         if (i % 2 == 0)
@@ -22,17 +22,16 @@ void SumElemNe4Index(int[] numbers)//Поиск суммы элементов с
     }
     Console.WriteLine($"Cумма элементов с нечётными индексами = {index}");
 }
-void FillArray(int[] nums, int minZna4, int maxZna4)//Создание массива
+void FillArray(double[] numb)//Создание массива
 {
-    minZna4++;
     Random rand = new Random();
-    int Length = nums.Length;
+    int Length = numb.Length;
     for (int i = 0; i < Length; i++)
     {
-        nums[i] = rand.Next(minZna4, maxZna4);
+        numb[i] = Math.Round(rand.NextDouble() * 100, 2);     
     }
 }
-void PrintArray(int[] nums)//Печать массива
+void PrintArray(double[] nums)//Печать массива
 {
     int Length = nums.Length;
     Console.WriteLine("Вывод массива:");
