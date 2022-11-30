@@ -14,12 +14,12 @@ void SumElemNe4Index(double[] numbers)//Поиск суммы элементов
     {
         if (i % 2 == 0)
         {
-            Console.Write($"({index}) + ({numbers[i]}) = ");
+            Console.Write($"({index}) + ({numbers[i]}) = ", 3);
             index = index + numbers[i];
-            Console.WriteLine($"({index})");
-            Console.WriteLine();
+            
         }
     }
+    Console.WriteLine();
     Console.WriteLine($"Cумма элементов с нечётными индексами = {index}");
 }
 void FillArray(double[] numb)//Создание массива
@@ -28,7 +28,7 @@ void FillArray(double[] numb)//Создание массива
     int Length = numb.Length;
     for (int i = 0; i < Length; i++)
     {
-        numb[i] = Math.Round(rand.NextDouble() * 100, 2);     
+        numb[i] = Math.Round(rand.NextDouble() * 10, 3);     
     }
 }
 void PrintArray(double[] nums)//Печать массива
