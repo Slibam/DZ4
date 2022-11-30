@@ -1,34 +1,35 @@
 ﻿void Zadanie2()
 {
-    //Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов с нечётными индексами.
+    //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
     int size = 10;
     double[] numbers = new double[size];
     FillArray(numbers);
     PrintArray(numbers);
-    SumElemNe4Index(numbers);
+    Raznitca(numbers);
 }
-void SumElemNe4Index(double[] numbers)//Поиск суммы элементов с нечётными индексами
-{
-    double index = 0;
+void Raznitca(double[] numbers)//Разница между макс и мин элементом массива
+{   
+    double max = 0;
+    double min = 0;
+    double Raznitca = 0;
     for (int i = 0; i < numbers.Length; i++)
     {
-        if (i % 2 == 0)
-        {
-            Console.Write($"({index}) + ({numbers[i]}) = ", 3);
-            index = index + numbers[i];
-            
-        }
+        if (numbers[i] > max) max = numbers[i];
+        if (numbers[i] < min) min = numbers[i];
     }
-    Console.WriteLine();
-    Console.WriteLine($"Cумма элементов с нечётными индексами = {index}");
+    Console.WriteLine($"Минимальное число массива = {min}");
+    Console.WriteLine($"Максимальное число массива = {max}");
+    Raznitca =  Math.Abs(min)+Math.Abs(max);
+    Console.WriteLine($"Разниц между максимальным и минимальным элементов массива {Raznitca}");
 }
 void FillArray(double[] numb)//Создание массива
 {
     Random rand = new Random();
-    int Length = numb.Length;
+    double Length = numb.Length;
     for (int i = 0; i < Length; i++)
     {
-        numb[i] = Math.Round(rand.NextDouble() * 10, 3);     
+        numb[i] = rand.Next(-10000,10000);
+        numb[i] = numb[i] / 100;
     }
 }
 void PrintArray(double[] nums)//Печать массива
